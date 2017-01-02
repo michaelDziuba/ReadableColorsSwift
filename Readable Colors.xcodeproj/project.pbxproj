@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3204BF491E1ACB9E0069E82B /* CustomSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 3204BF481E1ACB9E0069E82B /* CustomSort.m */; };
 		321122301D3E70A10096407B /* ReadableColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211222F1D3E70A10096407B /* ReadableColors.swift */; };
 		32D417B01D3BC4EB00253CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */; };
 		32D417B21D3BC4EB00253CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417B11D3BC4EB00253CF2 /* ViewController.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3204BF471E1ACB9E0069E82B /* Readable Colors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Readable Colors-Bridging-Header.h"; sourceTree = "<group>"; };
+		3204BF481E1ACB9E0069E82B /* CustomSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSort.m; sourceTree = "<group>"; };
+		3204BF4A1E1ACF130069E82B /* CustomSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSort.h; sourceTree = "<group>"; };
 		3211222F1D3E70A10096407B /* ReadableColors.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ReadableColors.swift; sourceTree = "<group>"; };
 		32D417AC1D3BC4EB00253CF2 /* Readable Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Readable Colors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,9 @@
 				32D417C11D3BCD7D00253CF2 /* ViewControllerOptions.swift */,
 				32D417C31D3BCD8E00253CF2 /* ViewControllerAbout.swift */,
 				3211222F1D3E70A10096407B /* ReadableColors.swift */,
+				3204BF481E1ACB9E0069E82B /* CustomSort.m */,
+				3204BF471E1ACB9E0069E82B /* Readable Colors-Bridging-Header.h */,
+				3204BF4A1E1ACF130069E82B /* CustomSort.h */,
 			);
 			path = "Practice 2.0";
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3204BF491E1ACB9E0069E82B /* CustomSort.m in Sources */,
 				32D417C21D3BCD7D00253CF2 /* ViewControllerOptions.swift in Sources */,
 				321122301D3E70A10096407B /* ReadableColors.swift in Sources */,
 				32D417B21D3BC4EB00253CF2 /* ViewController.swift in Sources */,
@@ -270,10 +278,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Practice 2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
 				PRODUCT_NAME = "Readable Colors";
+				SWIFT_OBJC_BRIDGING_HEADER = "Practice 2.0/Readable Colors-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -282,10 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Practice 2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
 				PRODUCT_NAME = "Readable Colors";
+				SWIFT_OBJC_BRIDGING_HEADER = "Practice 2.0/Readable Colors-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

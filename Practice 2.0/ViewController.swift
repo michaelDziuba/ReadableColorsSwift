@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var mainNavHeight: NSLayoutConstraint!
@@ -83,14 +84,14 @@ class ViewController: UIViewController {
     var isFromOptionsViewController: Bool = false
    
     var labelHeight: CGFloat = 17.0
-  
     
+    
+     var customSort: CustomSort = CustomSort()
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        
-        
+    
         
         
         screenHeight = Double(screenSize.height)
@@ -185,6 +186,10 @@ class ViewController: UIViewController {
         }
         
         
+        
+        customSort.sortCode = sortCode
+        customSort.arrayHSVColors = arrayHSVColors
+        //customSort.sortArray()
 
         recreateAllForNewSettings()
         
@@ -566,6 +571,11 @@ class ViewController: UIViewController {
             $0[sortCode] > $1[sortCode]
         }
     }
+    
+    
+  
+    
+
     
     
     func makeTextColor(_ textR: Float, textG: Float, textB: Float){
