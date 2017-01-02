@@ -120,8 +120,8 @@ class ViewController: UIViewController {
         }
         
         
-        var labelTextSize = labelHeight * 0.7
-        labelTextSize = labelTextSize > 11.5 ? labelTextSize : 11.5
+        var labelTextSize = labelHeight * 0.65
+        labelTextSize = labelTextSize < 14 ? labelTextSize : 14
         
         formatColorLabels(labelTextSize)
         
