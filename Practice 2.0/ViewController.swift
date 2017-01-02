@@ -47,13 +47,17 @@ class ViewController: UIViewController {
     var progress: Int = 0
     var progressScaleFactor: Float = 0.0
     var sortCode: Int = 1
+    var sortCode1: Int = 0
+    var sortCode2: Int = 0
+    var sortCode3: Int = 0
+    var sortCode4: Int = 0
     var seekBarPosition: Float = 0.0
     var currentProgress: Int = 0
     
     var infoColorCode: Int = 2
     
     
-    var arrayHSVColors = Array<[Float]>(repeating: Array(repeating: 0.0, count: 3), count: 7400)
+    var arrayHSVColors = Array<[Float]>(repeating: Array(repeating: 0.0, count: 4), count: 7400)
     var count: Int = 0
     let COLORS_DISPLAY: Int = 68;
     
@@ -187,8 +191,8 @@ class ViewController: UIViewController {
         
         
         
-        customSort.sortCode = sortCode
-        customSort.arrayHSVColors = arrayHSVColors
+//        customSort.sortCode = sortCode
+//        customSort.arrayHSVColors = arrayHSVColors
         //customSort.sortArray()
 
         recreateAllForNewSettings()
@@ -567,10 +571,38 @@ class ViewController: UIViewController {
     
     
     func sortColorArray(_ sortCode: Int){
-        arrayHSVColors.sort {
-            $0[sortCode] > $1[sortCode]
-        }
+       
+        arrayHSVColors.sort(by: {
+            return $0[sortCode] > $1[sortCode]
+        })
+    
+
+        
+//        arrayHSVColors.sort {
+//            $0[sortCode] > $1[sortCode]
+//        }
+        
+//        print(sortCode)
+//        //customSort.sortCode = sortCode
+//        //customSort.arrayHSVColors = arrayHSVColors
+//        customSort.sortArray(Int32(sortCode), array)
+        //arrayHSVColors = customSort.arrayHSVColors as! Array<[Float]>
     }
+    
+//    func quicksort( input: [Int]) -> [Int] {
+//        var input = input
+//        qsort(&input, input.count, input.bytes.assumingMemoryBound(to: Int.self)) { (l, r) -> Int32 in
+//            
+//            let left: Int = UnsafePointer(l).memory
+//            let right: Int = UnsafePointer(r).memory
+//            
+//            if left < right { return -1 }
+//            if left == right {return 0 }
+//            return 1
+//        }
+//        return input
+//    }
+
     
     
   

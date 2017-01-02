@@ -27,7 +27,10 @@ float arrayHSVColors[7400][4];
 
 
 
--(void) sortArray{
+-(void) sortArray: (int) sortCode : (float* [7400][4]) arrayHSVColors {
+    printf("Sort Code: %d\n", sortCode);
+    
+    
     switch (sortCode) {
         case 0: sortCode1 = 0; sortCode2 = 2; sortCode3 = 1; sortCode4 = 3; break;
         case 1: sortCode1 = 1; sortCode2 = 2; sortCode3 = 0; sortCode4 = 3; break;

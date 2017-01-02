@@ -53,6 +53,6 @@
 
 int compare (const void *a, const void *b);
 
-- (void) sortArray;
+- (void) sortArray : (int) sortCode : (float* [7400][4]) arrayHSVColors;
 
 @end
