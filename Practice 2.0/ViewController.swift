@@ -572,38 +572,51 @@ class ViewController: UIViewController {
     
     func sortColorArray(_ sortCode: Int){
        
-        arrayHSVColors.sort(by: {
-            return $0[sortCode] > $1[sortCode]
-        })
-    
+//        arrayHSVColors.sort(by: {
+//            return $0[sortCode] > $1[sortCode]
+//        })
+        
+        switch (sortCode) {
+            case 0: sortCode1 = 0; sortCode2 = 2; sortCode3 = 1; sortCode4 = 3
+            case 1: sortCode1 = 1; sortCode2 = 2; sortCode3 = 0; sortCode4 = 3
+            case 2: sortCode1 = 2; sortCode2 = 1; sortCode3 = 0; sortCode4 = 3
+            case 3: sortCode1 = 3; sortCode2 = 1; sortCode3 = 2; sortCode4 = 0
+            default: break
+        }
+        
+        arrayHSVColors.sort{
+            if $0[sortCode1] > $1[sortCode1] {
+                return true
+            }else if $0[sortCode1] < $1[sortCode1] {
+                return false
+            }else if $0[sortCode1] == $1[sortCode1] {
+                if $0[sortCode2] > $1[sortCode2] {
+                    return true
+                }else if $0[sortCode2] < $1[sortCode2] {
+                    return false
+                }else if $0[sortCode2] == $1[sortCode2] {
+                    if $0[sortCode3] > $1[sortCode3] {
+                        return true
+                    }else if $0[sortCode3] < $1[sortCode3] {
+                        return false
+                    }else if $0[sortCode3] == $1[sortCode3] {
+                        if $0[sortCode4] > $1[sortCode4] {
+                            return true
+                        }else if $0[sortCode4] < $1[sortCode4] {
+                            return false
+                        }else if $0[sortCode4] == $1[sortCode4] {
+                            return false
+                        }
+                    }
+                }
+            }
+            return false
+        }
+        
 
-        
-//        arrayHSVColors.sort {
-//            $0[sortCode] > $1[sortCode]
-//        }
-        
-//        print(sortCode)
-//        //customSort.sortCode = sortCode
-//        //customSort.arrayHSVColors = arrayHSVColors
-//        customSort.sortArray(Int32(sortCode), array)
-        //arrayHSVColors = customSort.arrayHSVColors as! Array<[Float]>
     }
     
-//    func quicksort( input: [Int]) -> [Int] {
-//        var input = input
-//        qsort(&input, input.count, input.bytes.assumingMemoryBound(to: Int.self)) { (l, r) -> Int32 in
-//            
-//            let left: Int = UnsafePointer(l).memory
-//            let right: Int = UnsafePointer(r).memory
-//            
-//            if left < right { return -1 }
-//            if left == right {return 0 }
-//            return 1
-//        }
-//        return input
-//    }
 
-    
     
   
     
