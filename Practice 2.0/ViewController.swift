@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     var infoColorCode: Int = 2
     
     
-    var arrayHSVColors = Array<[Float]>(repeating: Array(repeating: 0.0, count: 4), count: 7400)
+    var arrayHSVColors = Array<[Float]>(repeating: Array(repeating: 0.0, count: 7), count: 7400)
     var count: Int = 0
     let COLORS_DISPLAY: Int = 68;
     
@@ -549,7 +549,7 @@ class ViewController: UIViewController {
     
     
     func makeColorArray(){
-        arrayHSVColors =  Array<[Float]>(repeating: Array(repeating: 0.0, count: 4), count: 7400)
+        arrayHSVColors =  Array<[Float]>(repeating: Array(repeating: 0.0, count: 7), count: 7400)
         count = 0
         
         for i in stride(from: 0, to: 256, by: 15){
@@ -562,6 +562,9 @@ class ViewController: UIViewController {
                         arrayHSVColors[count][1] = s
                         arrayHSVColors[count][2] = v
                         arrayHSVColors[count][3] = contrastRatioNumber
+                        arrayHSVColors[count][4] = Float(i)
+                        arrayHSVColors[count][5] = Float(j)
+                        arrayHSVColors[count][6] = Float(k)
                         count += 1
                     }
                 }
