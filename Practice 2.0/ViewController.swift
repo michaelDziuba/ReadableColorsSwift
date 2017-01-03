@@ -46,6 +46,11 @@ class ViewController: UIViewController {
     var progress: Int = 0
     var progressScaleFactor: Float = 0.0
     var sortCode: Int = 1
+    var sortCode1: Int = 0
+    var sortCode2: Int = 0
+    var sortCode3: Int = 0
+    var sortCode4: Int = 0
+    
     var seekBarPosition: Float = 0.0
     var currentProgress: Int = 0
     
@@ -562,9 +567,47 @@ class ViewController: UIViewController {
     
     
     func sortColorArray(_ sortCode: Int){
-        arrayHSVColors.sort {
-            $0[sortCode] > $1[sortCode]
+//        arrayHSVColors.sort {
+//            $0[sortCode] > $1[sortCode]
+//        }
+        
+        switch (sortCode) {
+        case 0: sortCode1 = 0; sortCode2 = 2; sortCode3 = 1; sortCode4 = 3
+        case 1: sortCode1 = 1; sortCode2 = 2; sortCode3 = 0; sortCode4 = 3
+        case 2: sortCode1 = 2; sortCode2 = 1; sortCode3 = 0; sortCode4 = 3
+        case 3: sortCode1 = 3; sortCode2 = 1; sortCode3 = 2; sortCode4 = 0
+        default: break
         }
+        
+        arrayHSVColors.sort{
+            if $0[sortCode1] > $1[sortCode1] {
+                return true
+            }else if $0[sortCode1] < $1[sortCode1] {
+                return false
+            }else if $0[sortCode1] == $1[sortCode1] {
+                if $0[sortCode2] > $1[sortCode2] {
+                    return true
+                }else if $0[sortCode2] < $1[sortCode2] {
+                    return false
+                }else if $0[sortCode2] == $1[sortCode2] {
+                    if $0[sortCode3] > $1[sortCode3] {
+                        return true
+                    }else if $0[sortCode3] < $1[sortCode3] {
+                        return false
+                    }else if $0[sortCode3] == $1[sortCode3] {
+                        if $0[sortCode4] > $1[sortCode4] {
+                            return true
+                        }else if $0[sortCode4] < $1[sortCode4] {
+                            return false
+                        }else if $0[sortCode4] == $1[sortCode4] {
+                            return false
+                        }
+                    }
+                }
+            }
+            return false
+        }
+        
     }
     
     
