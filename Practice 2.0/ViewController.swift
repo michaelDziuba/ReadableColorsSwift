@@ -404,27 +404,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     func luminance(_ valueR: Float, valueG: Float, valueB: Float) -> Float {
         
