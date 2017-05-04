@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -632,19 +632,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V8l-gH-3dw">
-                                        <rect key="frame" x="13" y="407.5" width="349" height="31"/>
+                                        <rect key="frame" x="13" y="412.5" width="349" height="31"/>
                                         <connections>
                                             <action selector="colorScanSliderHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="opE-Mw-cat"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysq-Z7-3VU">
-                                        <rect key="frame" x="10" y="447.5" width="355" height="20.5"/>
+                                        <rect key="frame" x="10" y="450.5" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="c8W-vN-5Y4">
-                                        <rect key="frame" x="15" y="473" width="345" height="29"/>
+                                        <rect key="frame" x="15" y="476" width="345" height="29"/>
                                         <segments>
                                             <segment title="Hex Code"/>
                                             <segment title="RGB Values"/>
@@ -654,8 +654,14 @@
                                             <action selector="colorInforSegmentedControlHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="plR-h2-vkf"/>
                                         </connections>
                                     </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-yH-WYe">
+                                        <rect key="frame" x="10" y="512" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tjH-PT-VQh">
-                                        <rect key="frame" x="15" y="536.5" width="345" height="29"/>
+                                        <rect key="frame" x="15" y="537.5" width="345" height="29"/>
                                         <segments>
                                             <segment title="White Text"/>
                                             <segment title="Black Text"/>
@@ -664,12 +670,6 @@
                                             <action selector="textColorSegmentedControlHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="dZL-Hz-2EC"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-yH-WYe">
-                                        <rect key="frame" x="10" y="511" width="355" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -678,18 +678,18 @@
                                     <constraint firstItem="fbb-nm-RGF" firstAttribute="top" secondItem="OXG-AR-ykP" secondAttribute="bottom" constant="10" id="5jl-6F-3r0"/>
                                     <constraint firstAttribute="trailing" secondItem="V8l-gH-3dw" secondAttribute="trailing" constant="15" id="8CE-R1-SI8"/>
                                     <constraint firstAttribute="trailing" secondItem="tjH-PT-VQh" secondAttribute="trailing" constant="15" id="9Y9-yB-b09"/>
-                                    <constraint firstItem="Ysq-Z7-3VU" firstAttribute="top" secondItem="V8l-gH-3dw" secondAttribute="bottom" constant="10" id="GsA-3n-aIE"/>
+                                    <constraint firstItem="Ysq-Z7-3VU" firstAttribute="top" secondItem="V8l-gH-3dw" secondAttribute="bottom" constant="8" id="GsA-3n-aIE"/>
                                     <constraint firstAttribute="width" constant="375" id="K69-e7-fgA"/>
                                     <constraint firstItem="OXG-AR-ykP" firstAttribute="leading" secondItem="cy4-Hf-IED" secondAttribute="leading" id="Nb7-nj-QWp"/>
                                     <constraint firstAttribute="trailing" secondItem="c8W-vN-5Y4" secondAttribute="trailing" constant="15" id="OMd-zk-WR4"/>
-                                    <constraint firstItem="5rO-yH-WYe" firstAttribute="top" secondItem="c8W-vN-5Y4" secondAttribute="bottom" constant="10" id="RhE-b5-oT8"/>
+                                    <constraint firstItem="5rO-yH-WYe" firstAttribute="top" secondItem="c8W-vN-5Y4" secondAttribute="bottom" constant="8" id="RhE-b5-oT8"/>
                                     <constraint firstItem="OXG-AR-ykP" firstAttribute="top" secondItem="cy4-Hf-IED" secondAttribute="top" constant="20" id="SBJ-8i-iqS"/>
                                     <constraint firstAttribute="trailing" secondItem="Ysq-Z7-3VU" secondAttribute="trailing" constant="10" id="USE-n5-McK"/>
                                     <constraint firstAttribute="trailing" secondItem="OXG-AR-ykP" secondAttribute="trailing" id="UvE-pj-BFf"/>
                                     <constraint firstAttribute="trailing" secondItem="5rO-yH-WYe" secondAttribute="trailing" constant="10" id="W0w-J2-RhY"/>
                                     <constraint firstAttribute="trailing" secondItem="rGl-fR-zsf" secondAttribute="trailing" constant="10" id="ZFQ-gI-ytP"/>
                                     <constraint firstItem="5rO-yH-WYe" firstAttribute="leading" secondItem="cy4-Hf-IED" secondAttribute="leading" constant="10" id="ahj-ek-uxt"/>
-                                    <constraint firstItem="V8l-gH-3dw" firstAttribute="top" secondItem="rGl-fR-zsf" secondAttribute="bottom" id="bql-aU-21w"/>
+                                    <constraint firstItem="V8l-gH-3dw" firstAttribute="top" secondItem="rGl-fR-zsf" secondAttribute="bottom" constant="5" id="bql-aU-21w"/>
                                     <constraint firstItem="rGl-fR-zsf" firstAttribute="leading" secondItem="cy4-Hf-IED" secondAttribute="leading" constant="10" id="f0R-of-XXq"/>
                                     <constraint firstItem="tjH-PT-VQh" firstAttribute="leading" secondItem="cy4-Hf-IED" secondAttribute="leading" constant="15" id="oHn-XI-HuM"/>
                                     <constraint firstItem="tjH-PT-VQh" firstAttribute="top" secondItem="5rO-yH-WYe" secondAttribute="bottom" constant="5" id="pFY-Rl-lwg"/>
@@ -709,12 +709,15 @@
                         </constraints>
                     </scrollView>
                     <connections>
+                        <outlet property="colorInfoLabel" destination="Ysq-Z7-3VU" id="u3d-0H-zOr"/>
                         <outlet property="colorInfoSegmentedControl" destination="c8W-vN-5Y4" id="hCM-DR-WAr"/>
                         <outlet property="colorLabelsHeight" destination="e8h-E9-fgX" id="ey6-Sy-pBM"/>
+                        <outlet property="colorScanLabel" destination="rGl-fR-zsf" id="qQ8-9r-yuV"/>
                         <outlet property="colorScanSlider" destination="V8l-gH-3dw" id="NCd-dz-Yz8"/>
                         <outlet property="mainNavHeight" destination="A3W-PR-Gaz" id="SU7-pC-zFu"/>
                         <outlet property="mainViewHeight" destination="yHq-xM-ykm" id="Lzx-UQ-uzJ"/>
                         <outlet property="mainViewWidth" destination="K69-e7-fgA" id="5ga-pc-Dij"/>
+                        <outlet property="textColorLabel" destination="5rO-yH-WYe" id="xOV-HG-Ony"/>
                         <outlet property="textColorSegmentedControl" destination="tjH-PT-VQh" id="kMa-Ff-RzM"/>
                         <outletCollection property="labels" destination="G8Z-CB-wJ1" collectionClass="NSMutableArray" id="Fqg-BW-XDw"/>
                         <outletCollection property="labels" destination="Slp-lq-pc9" collectionClass="NSMutableArray" id="8f1-LV-0HN"/>
@@ -788,7 +791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704.5" y="479.5"/>
+            <point key="canvasLocation" x="-704.79999999999995" y="479.01049475262374"/>
         </scene>
         <!--View Controller Options-->
         <scene sceneID="i3P-iP-pEw">

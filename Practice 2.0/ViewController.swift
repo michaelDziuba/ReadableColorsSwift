@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
     
+    
+    
     @IBOutlet var labels: [UILabel]!
     
     
@@ -27,6 +29,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorInfoSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var textColorSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var colorScanLabel: UILabel!
+    @IBOutlet weak var colorInfoLabel: UILabel!
+    @IBOutlet weak var textColorLabel: UILabel!
     
     
     
@@ -135,7 +141,12 @@ class ViewController: UIViewController {
         
     
         if(screenHeight < 600.0){
-            mainViewHeight.constant = screenSize.height + (600.0 - screenSize.height)
+            mainViewHeight.constant = screenSize.height + (600.0 - screenSize.height - 32)
+            let labelFont = UIFont(name: "Helvetica-Bold", size: 14.0 )
+            colorScanLabel.font = labelFont
+            colorInfoLabel.font = labelFont
+            textColorLabel.font = labelFont
+        
         }else{
             mainViewHeight.constant = screenSize.height
         }
@@ -277,13 +288,7 @@ class ViewController: UIViewController {
         }
  
             
-            
-        
-        
-        
-        
-        
-        
+
         
         if(screenWidth < screenHeight || screenWidth > 667.0) {
             mainNavHeight.constant = 44
