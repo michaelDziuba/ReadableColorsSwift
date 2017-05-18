@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Practice 2.0
 //
-//  Created by cdu on 2016-07-17.
+//  Created by Michael Dziuba on 2016-07-17.
 //  Copyright © 2016 Michael Dziuba. All rights reserved.
 //
 
@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainViewWidth: NSLayoutConstraint!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
+   
+    @IBOutlet weak var colorSlider: UISlider!
     
-    
-    
+
     @IBOutlet var labels: [UILabel]!
     
     
@@ -34,10 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorInfoLabel: UILabel!
     @IBOutlet weak var textColorLabel: UILabel!
     
-    
+    var timer: Timer?
     
     let statusBar = (UIApplication.shared.value(forKey: "statusBarWindow") as AnyObject).value(forKey: "statusBar") as? UIView
-    
     
     let screenSize: CGRect = UIScreen.main.bounds
     var scale = UIScreen.main.scale
@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     var screenWidth: Double = 0.0
     var screenXorigin: Double = 0.0
     var screenYorigin: Double = 0.0
-    
     
     var contrastCode: Int = 1
     
@@ -61,7 +60,6 @@ class ViewController: UIViewController {
     var currentProgress: Int = 0
     
     var infoColorCode: Int = 2
-    
     
     var arrayHSVColors = Array<[Float]>(repeating: Array(repeating: 0.0, count: 3), count: 7400)
     var count: Int = 0
@@ -86,24 +84,15 @@ class ViewController: UIViewController {
     let B_FACTOR: Float = 0.0722;
     
     let RGB_MAX: Float = 255.0;
-  
-    
-    
 
     var readableColors: ReadableColors?
     var isFromOptionsViewController: Bool = false
    
     var labelHeight: CGFloat = 17.0
-  
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        
-        
-        
-        
+
         screenHeight = Double(screenSize.height)
         screenWidth = Double(screenSize.width)
         screenXorigin = Double(screenSize.origin.x)
@@ -114,8 +103,7 @@ class ViewController: UIViewController {
         }else{
             mainNavHeight.constant = 34
         }
-        
-       
+
         if(screenHeight >= 667.0 && screenHeight < 736.0){
             colorLabelsHeight.constant = CGFloat(screenHeight * 0.03)
             labelHeight = CGFloat(screenHeight * 0.03)
@@ -129,17 +117,14 @@ class ViewController: UIViewController {
             colorLabelsHeight.constant = CGFloat(screenHeight * 0.04)
             labelHeight = CGFloat(screenHeight * 0.04)
         }
-        
-        
+ 
         var labelTextSize = labelHeight * 0.65
         labelTextSize = labelTextSize < 14 ? labelTextSize : 14
         
         formatColorLabels(labelTextSize)
-        
-        
+
         setStatusBarBackgroundColor(UIColor(colorLiteralRed: 0.95, green: 1.0, blue: 0.95, alpha: 1.0))
-        
-    
+
         if(screenHeight < 600.0){
             mainViewHeight.constant = screenSize.height + (600.0 - screenSize.height - 32)
             let labelFont = UIFont(name: "Helvetica-Bold", size: 14.0 )
@@ -151,10 +136,6 @@ class ViewController: UIViewController {
             mainViewHeight.constant = screenSize.height
         }
         mainViewWidth.constant = screenSize.width
-        
-        
-     
-       
 
         readableColors = loadReadableColors()
         
@@ -168,11 +149,8 @@ class ViewController: UIViewController {
                                             textG: textG, textB: textB, seekBarPosition: seekBarPosition,
                                             currentProgress: currentProgress, progress: progress)
             saveReadableColors()
-            
-           
+  
         }else{
-           
-            
             infoColorCode = (readableColors?.infoColorCode)!
             textColorCode = (readableColors?.textColorCode)!
             
@@ -199,31 +177,58 @@ class ViewController: UIViewController {
             currentProgress = (readableColors?.currentProgress)!
             progress = (readableColors?.progress)!
         }
-        
-        
 
         recreateAllForNewSettings()
-        
+    }
+
+    
+    @IBAction func touchDownLessColorSlider(_ sender: UIButton) {
+        decreaseColorSlider()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(decreaseColorSlider), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func touchUpLessColorSlider(_ sender: UIButton) {
+        timer?.invalidate()
+    }
+    
+    @IBAction func touchDownMoreColorSlider(_ sender: UIButton) {
+        increaseColorSlider()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(increaseColorSlider), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func touchUpMoreColorSlider(_ sender: UIButton) {
+        timer?.invalidate()
     }
     
     
+    func decreaseColorSlider() {
+        colorSlider.value  = colorSlider.value - 0.01
+        updateColorSlider()
+    }
     
- /*
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    func increaseColorSlider() {
+        colorSlider.value  = colorSlider.value + 0.01
+        updateColorSlider()
+    }
+    
+    func updateColorSlider(){
+        progress = Int(round(colorSlider.value * 100))
+        seekBarPosition = colorSlider.value
+        currentProgress = Int(Float(progress) * progressScaleFactor)
+        readableColors!.seekBarPosition = seekBarPosition
+        readableColors!.currentProgress = currentProgress
+        readableColors!.progress = progress
         saveReadableColors()
+        makeBackgroundColor(currentProgress)
+        showColorInfo()
     }
-  */  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         saveReadableColors()
     }
-    
-    
-    
-    
+
     
     // MARK: - Navigation
     
@@ -236,14 +241,8 @@ class ViewController: UIViewController {
             viewControllerOptions.contrastCode = self.contrastCode
             viewControllerOptions.sortCode = self.sortCode
         }
-        
     }
-    
-    
-    
-    
-    
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -260,9 +259,7 @@ class ViewController: UIViewController {
             }else{
                 mainViewHeight.constant = size.height
             }
-            
-            
-            
+
             if(screenHeight >= 667.0 && screenHeight < 736.0){
                 colorLabelsHeight.constant = CGFloat(screenHeight * 0.03)
                 labelHeight = CGFloat(screenHeight * 0.03)
@@ -277,44 +274,29 @@ class ViewController: UIViewController {
                 labelHeight = CGFloat(screenHeight * 0.04)
             }
             
-            
             var labelTextSize = labelHeight * 0.7
             labelTextSize = labelTextSize > 11.5 ? labelTextSize : 11.5
             
             formatColorLabels(labelTextSize)
-            
-            
-            
         }
- 
-            
-
         
         if(screenWidth < screenHeight || screenWidth > 667.0) {
             mainNavHeight.constant = 44
         }else{
             mainNavHeight.constant = 34
         }
-       
-        
     }
-    
     
     override var prefersStatusBarHidden : Bool {
         return false
     }
-    
-    
-    
+
     func setStatusBarBackgroundColor(_ color: UIColor) {
         if (statusBar != nil){
             statusBar!.backgroundColor = color
         }
     }
     
-    
-    
-  
     override var shouldAutorotate : Bool {
         if((screenWidth < 768.0 || screenHeight < 768.0) && screenHeight > screenWidth) {
             return false
@@ -329,24 +311,11 @@ class ViewController: UIViewController {
         }else{
             return UIInterfaceOrientationMask.allButUpsideDown
         }
-        
     }
   
-   
-    
-    
-    
     
     @IBAction func colorScanSliderHandler(_ sender: UISlider) {
-        progress = Int(round(sender.value * 100))
-        seekBarPosition = sender.value
-        currentProgress = Int(Float(progress) * progressScaleFactor)
-        readableColors!.seekBarPosition = seekBarPosition
-        readableColors!.currentProgress = currentProgress
-        readableColors!.progress = progress
-        saveReadableColors()
-        makeBackgroundColor(currentProgress)
-        showColorInfo()
+        updateColorSlider()
     }
     
     
@@ -379,10 +348,7 @@ class ViewController: UIViewController {
         showColorInfo()
     }
     
-    
-    
-    
-    
+
     @IBAction func colorInforSegmentedControlHandler(_ sender: UISegmentedControl) {
         infoColorCode = sender.selectedSegmentIndex
         readableColors!.infoColorCode = infoColorCode
@@ -390,7 +356,6 @@ class ViewController: UIViewController {
         recreateAllForNewSettings()
     }
 
-    
     @IBAction func textColorSegmentedControlHandler(_ sender: UISegmentedControl) {
         textColorCode = sender.selectedSegmentIndex
         readableColors!.textColorCode = textColorCode
@@ -407,10 +372,7 @@ class ViewController: UIViewController {
         saveReadableColors()
         recreateAllForNewSettings()
     }
-    
-    
 
-    
     func luminance(_ valueR: Float, valueG: Float, valueB: Float) -> Float {
         
         let sRBG_R: Float = valueR / RGB_MAX;
@@ -428,8 +390,7 @@ class ViewController: UIViewController {
         
         return luminance;
     }
-    
-    
+
     //minimum contrastRatio is 7:1 (https://www.w3.org/TR/WCAG20-TECHS/G17.html)
     func contrastRatio(_ textR: Float, textG: Float, textB: Float, backgroundR: Float, backgroundG: Float, backgroundB: Float) -> Float {
         
@@ -443,8 +404,7 @@ class ViewController: UIViewController {
         
         return contrastRatio;
     }
-    
-    
+
     /**
      http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c
      * Converts an RGB color value to HSV. Conversion formula
@@ -527,8 +487,6 @@ class ViewController: UIViewController {
         return (round(r * 255), round(g * 255), round(b * 255))
     }
     
-    
-    
     func makeColorArray(){
         arrayHSVColors =  Array<[Float]>(repeating: Array(repeating: 0.0, count: 4), count: 7400)
         count = 0
@@ -552,9 +510,6 @@ class ViewController: UIViewController {
     
     
     func sortColorArray(_ sortCode: Int){
-//        arrayHSVColors.sort {
-//            $0[sortCode] > $1[sortCode]
-//        }
         
         switch (sortCode) {
         case 0: sortCode1 = 0; sortCode2 = 2; sortCode3 = 1; sortCode4 = 3
@@ -599,8 +554,6 @@ class ViewController: UIViewController {
     func makeTextColor(_ textR: Float, textG: Float, textB: Float){
         for i in 0..<COLORS_DISPLAY {
             labels[i].textColor = UIColor(red: textR, green: textG, blue: textB)
-            //for(int i = 0; i < COLORS_DISPLAY; i++) {
-            //((TextView) (colorGridLayout.getChildAt(i))).setTextColor(Color.rgb(textR, textG, textB));
         }
     }
     
@@ -612,10 +565,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
+
     func showColorInfo(){
         switch(infoColorCode){
         case 0: makeHexCode(currentProgress)
@@ -624,9 +574,7 @@ class ViewController: UIViewController {
         default: break
         }
     }
-    
-    
-    
+
     func makeHexCode(_ progress: Int){
         
         var hexNumber1: String
@@ -665,9 +613,7 @@ class ViewController: UIViewController {
             labels[i].text = String(format: "%.2f", contrastRatioNumber)
         }
     }
-    
 
-    
     
      func saveReadableColors() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(readableColors!, toFile: ReadableColors.ArchiveURL.path)
@@ -697,15 +643,11 @@ class ViewController: UIViewController {
         for i in 0..<68 {
             labels[i].layer.borderColor = UIColor(colorLiteralRed: 0.8, green: 0.8, blue: 0.8, alpha: 1.0).cgColor
             labels[i].layer.borderWidth = 1.0
-            //labels[i].font = labels[i].font.fontWithSize(labelTextSize)
             labels[i].font = UIFont.boldSystemFont(ofSize: labelTextSize)
-            
         }
     }
     
 }
-
-
 
 
 /**

@@ -2,7 +2,7 @@
 //  ViewControllerAbout.swift
 //  Practice 2.0
 //
-//  Created by cdu on 2016-07-17.
+//  Created by Michael Dziuba on 2016-07-17.
 //  Copyright © 2016 Michael Dziuba. All rights reserved.
 //
 
@@ -15,8 +15,6 @@ class ViewControllerAbout: UIViewController {
     
     @IBOutlet weak var aboutViewWidth: NSLayoutConstraint!
     @IBOutlet weak var aboutViewHeight: NSLayoutConstraint!
-    
-
     
     let screenSize: CGRect = UIScreen.main.bounds
     var scale = UIScreen.main.scale
@@ -43,16 +41,12 @@ class ViewControllerAbout: UIViewController {
             aboutNavHeight.constant = 34
         }
         
-        
-        
         aboutViewWidth.constant = CGFloat(screenWidth)
         if(screenHeight < 700.0){
             aboutViewHeight.constant = CGFloat(screenHeight + (700.0 - screenHeight))
         }else{
             aboutViewHeight.constant = CGFloat(screenHeight)
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +54,6 @@ class ViewControllerAbout: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     
     @IBAction func webLink(_ sender: UIButton) {
         if let url = URL(string: "https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast") {
@@ -68,17 +61,13 @@ class ViewControllerAbout: UIViewController {
         }
     }
     
-    
     @IBAction func webLink2(_ sender: UIButton) {
         if let url = URL(string: "https://www.w3.org/TR/WCAG20-TECHS/G17.html") {
             UIApplication.shared.openURL(url)
         }
     }
     
-    
-    
-    
-    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -90,9 +79,7 @@ class ViewControllerAbout: UIViewController {
         
         //mainViewController.string = "About"
     }
-    
-    
-    
+
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         super.viewWillTransition(to: size, with: coordinator)
@@ -110,8 +97,6 @@ class ViewControllerAbout: UIViewController {
             }else{
                 aboutViewHeight.constant = size.height
             }
-            
-            
         }
         
         if(screenWidth < screenHeight || screenWidth > 667.0) {
@@ -121,7 +106,6 @@ class ViewControllerAbout: UIViewController {
         }
         
     }
-    
     
     
     override var prefersStatusBarHidden : Bool {
@@ -143,8 +127,7 @@ class ViewControllerAbout: UIViewController {
             return UIInterfaceOrientationMask.portrait
         }else{
             return UIInterfaceOrientationMask.allButUpsideDown
-        }
-        
+        }  
     }
 
 }

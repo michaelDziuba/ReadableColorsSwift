@@ -2,7 +2,7 @@
 //  ViewControllerOptions.swift
 //  Practice 2.0
 //
-//  Created by cdu on 2016-07-17.
+//  Created by Michael Dziuba on 2016-07-17.
 //  Copyright © 2016 Michael Dziuba. All rights reserved.
 //
 
@@ -44,8 +44,6 @@ class ViewControllerOptions: UIViewController {
         minimumContrastSegmentedControl.selectedSegmentIndex = contrastCode
         sortBySegmentedControl.selectedSegmentIndex = sortCode
         
-        
-        
         screenHeight = Double(screenSize.height)
         screenWidth = Double(screenSize.width)
         screenXorigin = Double(screenSize.origin.x)
@@ -62,26 +60,13 @@ class ViewControllerOptions: UIViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated
-        
     }
     
 
-    
-    
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -93,12 +78,8 @@ class ViewControllerOptions: UIViewController {
         mainViewController.contrastCode = self.contrastCode
         mainViewController.sortCode = self.sortCode
         mainViewController.isFromOptionsViewController = true
-        
     }
-    
-    
-    
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -115,8 +96,6 @@ class ViewControllerOptions: UIViewController {
             }else{
                 optionsViewHeight.constant = size.height
             }
-            
-            
         }
         
         if(screenWidth < screenHeight || screenWidth > 667.0) {
@@ -126,14 +105,9 @@ class ViewControllerOptions: UIViewController {
         }
     }
 
-    
-    
-    
-    
     override var prefersStatusBarHidden : Bool {
         return false
     }
-    
     
     override var shouldAutorotate : Bool {
         if((screenWidth < 768.0 || screenHeight < 768.0) && screenHeight > screenWidth) {
@@ -149,17 +123,14 @@ class ViewControllerOptions: UIViewController {
         }else{
             return UIInterfaceOrientationMask.allButUpsideDown
         }
-        
     }
     
-    
-    
+ 
     @IBAction func minimumContrastSegmentedControlHandler(_ sender: UISegmentedControl) {
         contrastCode = sender.selectedSegmentIndex
     }
     
-    
-    
+ 
     @IBAction func sortBySegmentedControlHandler(_ sender: UISegmentedControl) {
         sortCode = sender.selectedSegmentIndex
     }

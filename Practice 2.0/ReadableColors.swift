@@ -2,7 +2,7 @@
 //  ReadableColors.swift
 //  Practice 2.0
 //
-//  Created by cdu on 2016-07-19.
+//  Created by Michael Dziuba on 2016-07-19.
 //  Copyright © 2016 Michael Dziuba. All rights reserved.
 //
 
@@ -64,14 +64,6 @@ class ReadableColors: NSObject, NSCoding {
         self.progress = progress
         
         super.init()
-        
-        /*
-        // Initialization should fail if there is no name or if the rating is negative.
-        if name.isEmpty || rating < 0 {
-            return nil
-        }
- 
- */
     }
     
     // MARK: NSCoding
@@ -104,12 +96,7 @@ class ReadableColors: NSObject, NSCoding {
         let seekBarPosition = aDecoder.decodeFloat(forKey: PropertyKey.seekBarPositionKey)
         let currentProgress = aDecoder.decodeInteger(forKey: PropertyKey.currentProgressKey)
         let progress = aDecoder.decodeInteger(forKey: PropertyKey.progressKey)
-        /*
-        // Because photo is an optional property of Meal, use conditional cast.
-        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? Int
         
-        let rating = aDecoder.decodeIntegerForKey(PropertyKey.ratingKey)
-        */
         // Must call designated initializer.
         self.init(infoColorCode: infoColorCode, textColorCode: textColorCode, contrastCode: contrastCode, sortCode: sortCode, minContrastRatioNumber: minContrastRatioNumber,
                   textR: textR, textG: textG, textB: textB, seekBarPosition: seekBarPosition, currentProgress: currentProgress, progress: progress)
