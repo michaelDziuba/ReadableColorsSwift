@@ -116,7 +116,7 @@
 				TargetAttributes = {
 					32D417AB1D3BC4EB00253CF2 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 32EM7M33QQ;
+						DevelopmentTeam = 3KBQ6E62YX;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -282,11 +282,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32EM7M33QQ;
+				DEVELOPMENT_TEAM = 3KBQ6E62YX;
 				INFOPLIST_FILE = "Practice 2.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaeldziuba.readablecolors;
 				PRODUCT_NAME = "Readable Colors";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -297,11 +297,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32EM7M33QQ;
+				DEVELOPMENT_TEAM = 3KBQ6E62YX;
 				INFOPLIST_FILE = "Practice 2.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaeldziuba.readablecolors;
 				PRODUCT_NAME = "Readable Colors";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
