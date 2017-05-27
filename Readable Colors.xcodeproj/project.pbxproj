@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		321122301D3E70A10096407B /* ReadableColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211222F1D3E70A10096407B /* ReadableColors.swift */; };
+		32BBD8E51ED9133D00D8A676 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BBD8E41ED9133D00D8A676 /* screen.png */; };
 		32D417B01D3BC4EB00253CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */; };
 		32D417B21D3BC4EB00253CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417B11D3BC4EB00253CF2 /* ViewController.swift */; };
 		32D417B51D3BC4EB00253CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D417B31D3BC4EB00253CF2 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3211222F1D3E70A10096407B /* ReadableColors.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ReadableColors.swift; sourceTree = "<group>"; };
+		32BBD8E41ED9133D00D8A676 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 		32D417AC1D3BC4EB00253CF2 /* Readable Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Readable Colors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D417B11D3BC4EB00253CF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32CC79E11ED9148A00344BD8 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				32BBD8E41ED9133D00D8A676 /* screen.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
 		32D417A31D3BC4EB00253CF2 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		32D417AE1D3BC4EB00253CF2 /* Practice 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				32CC79E11ED9148A00344BD8 /* assets */,
 				32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */,
 				32D417B11D3BC4EB00253CF2 /* ViewController.swift */,
 				32D417B31D3BC4EB00253CF2 /* Main.storyboard */,
@@ -134,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D417BA1D3BC4EB00253CF2 /* LaunchScreen.storyboard in Resources */,
+				32BBD8E51ED9133D00D8A676 /* screen.png in Resources */,
 				32D417B71D3BC4EB00253CF2 /* Assets.xcassets in Resources */,
 				32D417B51D3BC4EB00253CF2 /* Main.storyboard in Resources */,
 			);
@@ -277,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
 				PRODUCT_NAME = "Readable Colors";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stclair.practice.mdziuba.Practice-2-0";
 				PRODUCT_NAME = "Readable Colors";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
