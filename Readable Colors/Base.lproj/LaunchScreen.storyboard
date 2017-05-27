@@ -21,13 +21,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen_7s.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-n0-bT1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="5" width="375" height="662"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wlJ-n0-bT1" secondAttribute="trailing" id="BhQ-E8-PT9"/>
-                            <constraint firstItem="wlJ-n0-bT1" firstAttribute="top" secondItem="bEQ-Rk-tqa" secondAttribute="top" id="G0A-w2-fgZ"/>
+                            <constraint firstItem="wlJ-n0-bT1" firstAttribute="top" secondItem="bEQ-Rk-tqa" secondAttribute="top" constant="5" id="G0A-w2-fgZ"/>
                             <constraint firstItem="Vlq-Ks-ala" firstAttribute="top" secondItem="wlJ-n0-bT1" secondAttribute="bottom" id="XSf-sf-LBm"/>
                             <constraint firstItem="wlJ-n0-bT1" firstAttribute="leading" secondItem="bEQ-Rk-tqa" secondAttribute="leading" id="wFu-SI-umA"/>
                         </constraints>
