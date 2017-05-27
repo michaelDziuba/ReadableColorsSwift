@@ -54,7 +54,7 @@
 		32D417A31D3BC4EB00253CF2 = {
 			isa = PBXGroup;
 			children = (
-				32D417AE1D3BC4EB00253CF2 /* Practice 2.0 */,
+				32D417AE1D3BC4EB00253CF2 /* Readable Colors */,
 				32D417AD1D3BC4EB00253CF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32D417AE1D3BC4EB00253CF2 /* Practice 2.0 */ = {
+		32D417AE1D3BC4EB00253CF2 /* Readable Colors */ = {
 			isa = PBXGroup;
 			children = (
 				32CC79E11ED9148A00344BD8 /* assets */,
@@ -81,7 +81,7 @@
 				32D417C31D3BCD8E00253CF2 /* ViewControllerAbout.swift */,
 				3211222F1D3E70A10096407B /* ReadableColors.swift */,
 			);
-			path = "Practice 2.0";
+			path = "Readable Colors";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
