@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		321122301D3E70A10096407B /* ReadableColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211222F1D3E70A10096407B /* ReadableColors.swift */; };
+		321BBC3F1ED97F85001472D2 /* screen_7s.png in Resources */ = {isa = PBXBuildFile; fileRef = 321BBC3E1ED97F85001472D2 /* screen_7s.png */; };
 		32BBD8E51ED9133D00D8A676 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BBD8E41ED9133D00D8A676 /* screen.png */; };
 		32D417B01D3BC4EB00253CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */; };
 		32D417B21D3BC4EB00253CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D417B11D3BC4EB00253CF2 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		3211222F1D3E70A10096407B /* ReadableColors.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ReadableColors.swift; sourceTree = "<group>"; };
+		321BBC3E1ED97F85001472D2 /* screen_7s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_7s.png; sourceTree = "<group>"; };
 		32BBD8E41ED9133D00D8A676 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 		32D417AC1D3BC4EB00253CF2 /* Readable Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Readable Colors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D417AF1D3BC4EB00253CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		32CC79E11ED9148A00344BD8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				321BBC3E1ED97F85001472D2 /* screen_7s.png */,
 				32BBD8E41ED9133D00D8A676 /* screen.png */,
 			);
 			name = assets;
@@ -148,6 +151,7 @@
 				32BBD8E51ED9133D00D8A676 /* screen.png in Resources */,
 				32D417B71D3BC4EB00253CF2 /* Assets.xcassets in Resources */,
 				32D417B51D3BC4EB00253CF2 /* Main.storyboard in Resources */,
+				321BBC3F1ED97F85001472D2 /* screen_7s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
