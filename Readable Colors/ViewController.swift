@@ -201,12 +201,12 @@ class ViewController: UIViewController {
     }
     
     
-    func decreaseColorSlider() {
+    @objc func decreaseColorSlider() {
         colorSlider.value  = colorSlider.value - 0.01
         updateColorSlider()
     }
     
-    func increaseColorSlider() {
+    @objc func increaseColorSlider() {
         colorSlider.value  = colorSlider.value + 0.01
         updateColorSlider()
     }
