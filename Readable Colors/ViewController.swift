@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         
         formatColorLabels(labelTextSize)
 
-        setStatusBarBackgroundColor(UIColor(colorLiteralRed: 0.95, green: 1.0, blue: 0.95, alpha: 1.0))
+        setStatusBarBackgroundColor(UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0))
 
         if(screenHeight < 600.0){
             mainViewHeight.constant = screenSize.height + (600.0 - screenSize.height - 32)
@@ -641,7 +641,7 @@ class ViewController: UIViewController {
     
     func formatColorLabels(_ labelTextSize: CGFloat){
         for i in 0..<68 {
-            labels[i].layer.borderColor = UIColor(colorLiteralRed: 0.8, green: 0.8, blue: 0.8, alpha: 1.0).cgColor
+            labels[i].layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0).cgColor
             labels[i].layer.borderWidth = 1.0
             labels[i].font = UIFont.boldSystemFont(ofSize: labelTextSize)
         }
