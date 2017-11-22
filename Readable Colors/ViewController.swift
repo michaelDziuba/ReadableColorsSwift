@@ -585,11 +585,11 @@ class ViewController: UIViewController {
             let (r, g, b) = hsvToRgb(arrayHSVColors[progress * COLORS_DISPLAY + i][0], s: arrayHSVColors[progress * COLORS_DISPLAY + i][1], v: arrayHSVColors[progress * COLORS_DISPLAY + i][2])
             
             hexNumber1 = String(format:"%2X", Int(r)).trim()
-            hexNumber1 = "#" + (hexNumber1.characters.count == 1 ? "0" + hexNumber1 : hexNumber1)
+            hexNumber1 = "#" + (hexNumber1.count == 1 ? "0" + hexNumber1 : hexNumber1)
             hexNumber2 = String(format:"%2X", Int(g)).trim()
-            hexNumber1 += (hexNumber2.characters.count == 1 ? "0" + hexNumber2 : hexNumber2)
+            hexNumber1 += (hexNumber2.count == 1 ? "0" + hexNumber2 : hexNumber2)
             hexNumber3 = String(format:"%2X", Int(b)).trim()
-            hexNumber1 += (hexNumber3.characters.count == 1 ? "0" + hexNumber3 : hexNumber3)
+            hexNumber1 += (hexNumber3.count == 1 ? "0" + hexNumber3 : hexNumber3)
             
             labels[i].text = hexNumber1
         }
